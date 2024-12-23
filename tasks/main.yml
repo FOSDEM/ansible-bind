@@ -17,10 +17,10 @@
     createhome: false
 
 - name: installing packages with apt
-  include: install.apt.yml
+  include_tasks: install.apt.yml
   when: ansible_os_family == 'Debian'
 
-- include: config.yml
+- import_tasks: config.yml
 
 - name: ensure bind is started
   service:
